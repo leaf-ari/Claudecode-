@@ -1087,5 +1087,4 @@ function cp(text, btn) {
 }
 show(0);
 </script>
-</body>
-</html>
+
