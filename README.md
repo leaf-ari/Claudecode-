@@ -7,7 +7,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: 'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;
-  background: #0f0f1a; color: #fff;   min-height: 100vh;
+  background: #0f0f1a; color: #fff;   min-height: 200vh;
   overflow-x: hidden;
   overflow-y: auto;
 }
