@@ -417,6 +417,8 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
         <div class="alert warn" style="margin-top:10px;font-size:13px;">
           ⚠️ <strong>貼り付けは右クリック → 貼り付け</strong>（または <kbd>Ctrl</kbd>+<kbd>V</kbd>）
         </div>
+                <div class="img-box dark-bg">
+<img src="https://learn.microsoft.com/en-us/windows/terminal/images/settings-default-shell.png" alt="Windows Terminal" loading="lazy" onerror="this.parentElement.style.display='none'">
       </div>
       <div>
         <div class="check-box" style="margin-top:8px;">
