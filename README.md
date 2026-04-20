@@ -261,7 +261,6 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
     <div class="alert company" style="display:inline-block;margin-top:8px;font-size:14px;">
       🏢 会社のClaudeアカウントをお持ちの方向けに最適化済み
     </div>
-    <p style="color:#4b5563;font-size:12px;margin-top:16px;">← → キーまたは下のボタンで次のスライドへ</p>
   </div>
 </div>
 
