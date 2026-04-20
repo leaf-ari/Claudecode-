@@ -367,6 +367,10 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
         <div class="alert warn" style="margin-top:10px;font-size:13px;">
           ⚠️ <strong>貼り付けは <kbd>⌘ Command</kbd> + <kbd>V</kbd></strong>（Ctrl+Vではない）
         </div>
+        <div class="img-box dark-bg">
+          <img src="https://help.apple.com/assets/694058E34AF4DEFE100B21F0/694058E5E47399E70903F18D/en_US/fe66109d1c446abfb01861b47ef61791.png" alt="Mac Spotlight" loading="lazy" onerror="this.parentElement.style.display='none'">
+        </div>
+        <p class="img-cap">Spotlight検索の画面（出典：Apple）</p>
       </div>
       <div>
         <div class="check-box" style="margin-top:8px;">
