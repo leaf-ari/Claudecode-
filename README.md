@@ -36,7 +36,7 @@ body {
 .s-ref     { background:linear-gradient(135deg,#0a0a1a,#1a0a0a); }
 .s-trouble { background:linear-gradient(135deg,#1a0a0a,#0a1a1a); }
 
-/* タイポ */
+/* タイトル */
 h1 { font-size:40px; font-weight:800; line-height:1.2; margin-bottom:12px; }
 h2 { font-size:26px; font-weight:700; margin-bottom:14px; }
 h3 { font-size:16px; font-weight:600; margin-bottom:8px; color:#c4b5fd; }
@@ -159,6 +159,102 @@ tr:last-child td { border-bottom:none; }
 
 /* kbdキー */
 kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 7px; font-size:12px; font-family:inherit; }
+
+/* ===== レスポンシブ対応 (スマホ・タブレット) ===== */
+@media (max-width: 768px) {
+  .slide {
+    padding: 20px 16px 80px;
+  }
+  .slide.active.top {
+    padding-top: 20px;
+  }
+
+  h1 { font-size: 26px; }
+  h2 { font-size: 20px; margin-bottom: 10px; }
+  h3 { font-size: 14px; }
+  p  { font-size: 13px; }
+  .sub { font-size: 14px; margin-bottom: 16px; }
+
+  /* グリッド → 1カラム */
+  .cards.col2,
+  .cards.col3,
+  .two {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* コードブロック */
+  .code {
+    font-size: 12px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    padding: 10px 12px 10px 12px;
+  }
+  .copy-btn {
+    position: static;
+    display: block;
+    margin-top: 6px;
+    width: fit-content;
+  }
+
+  /* ターミナル */
+  .term { font-size: 11px; }
+  .term-body { padding: 8px 10px; font-size: 11px; line-height: 1.6; }
+  .term-bar { padding: 5px 10px; }
+
+  /* テーブル */
+  table { font-size: 12px; }
+  td, th { padding: 6px 8px; }
+
+  /* ナビ */
+  .nav { padding: 8px 16px; }
+  .nb { padding: 10px 16px; font-size: 13px; min-height: 44px; }
+  .sc { font-size: 11px; }
+
+  /* ステップ */
+  .step { padding: 10px; gap: 10px; }
+  .sn { min-width: 24px; height: 24px; font-size: 11px; }
+  .sb h4 { font-size: 13px; }
+  .sb p  { font-size: 12px; }
+
+  /* アラート */
+  .alert { font-size: 13px; padding: 10px 12px; }
+
+  /* カード */
+  .card { padding: 12px; }
+
+  /* OSタブ */
+  .os-tabs { gap: 6px; }
+  .os-tab { font-size: 12px; padding: 5px 12px; }
+
+  /* 確認ボックス */
+  .check-box { padding: 12px 14px; }
+  .check-box .check-title { font-size: 14px; }
+
+  /* kbdキー */
+  kbd { font-size: 11px; padding: 1px 5px; }
+
+  /* バッジ */
+  .badge { font-size: 10px; }
+
+  /* タイトルスライド調整 */
+  .s-title h1 { font-size: 28px; }
+}
+
+@media (max-width: 480px) {
+  .slide { padding: 14px 12px 76px; }
+  .slide.active.top { padding-top: 14px; }
+
+  h1 { font-size: 22px; }
+  h2 { font-size: 17px; }
+  .s-title h1 { font-size: 22px; }
+
+  .steps { gap: 6px; }
+  .step  { padding: 8px; }
+
+  .two { gap: 8px; }
+  .cards { gap: 8px; }
+}
 </style>
 </head>
 <body>
@@ -170,8 +266,8 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
   <div style="text-align:center;">
     <div style="font-size:60px;margin-bottom:14px;">🤖</div>
     <h1>Claude Code<br>完全入門ガイド</h1>
-    <p class="sub">はじめてでも一人でできる・環境構築から動かすまで</p>
-    <div style="display:flex;justify-content:center;gap:12px;margin:18px 0;">
+    <p class="sub">はじめての方一人でできる・環境構築から使い方まで</p>
+    <div style="display:flex;justify-content:center;gap:12px;margin:18px 0;flex-wrap:wrap;">
       <div style="padding:8px 24px;border-radius:30px;border:2px solid #a78bfa;color:#c4b5fd;font-size:16px;font-weight:700;background:#a78bfa20;">🍎 Mac</div>
       <div style="padding:8px 24px;border-radius:30px;border:2px solid #60a5fa;color:#93c5fd;font-size:16px;font-weight:700;background:#60a5fa20;">🪟 Windows</div>
     </div>
@@ -184,7 +280,7 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
 
 <!-- 2: 全体の流れ -->
 <div class="slide s-what">
-  <h2>📍 全体の流れ（これだけ覚えれば大丈夫！）</h2>
+  <h2>📋 全体の流れ（ここだけ見れば大丈夫！）</h2>
   <div class="cards col3" style="margin-top:16px;">
     <div class="card" style="border-color:#a78bfa;text-align:center;">
       <div style="font-size:32px;margin-bottom:8px;">①</div>
@@ -213,10 +309,10 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
 <!-- 3: ターミナルとは -->
 <div class="slide s-term">
   <h2>🖥️ ターミナルとは？</h2>
-  <p>ターミナルとは<span class="hl">文字を打ち込んでパソコンに命令する画面</span>です。</p>
+  <p>ターミナルとは<span class="hl">文字を打ち込んでパソコンに命令できる画面</span>です。</p>
   <div class="cards col2" style="margin-top:12px;">
     <div class="card">
-      <h3>📌 普通のパソコン操作との違い</h3>
+      <h3>🔄 普通のパソコン操作との違い</h3>
       <table style="margin-top:8px;">
         <tr><th>普段の操作</th><th>ターミナル</th></tr>
         <tr><td>アイコンをクリック</td><td>文字を打ち込む</td></tr>
@@ -225,18 +321,18 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
       </table>
     </div>
     <div class="card">
-      <h3>📌 ターミナルの見た目</h3>
+      <h3>📺 ターミナルの見た目</h3>
       <div class="term" style="margin-top:8px;">
         <div class="term-bar"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div><span class="term-title">ターミナル</span></div>
         <div class="term-body">
-          <div><span class="tp">yourname@Mac ~ </span><span class="tc">%</span> <span style="color:#fff;">█</span></div>
+          <div><span class="tp">yourname@Mac ~ </span><span class="tc">%</span> <span style="color:#fff;">▌</span></div>
           <div style="color:#4b5563;font-size:12px;margin-top:4px;">↑ここに命令を入力する</div>
         </div>
       </div>
       <div class="term" style="margin-top:6px;">
         <div class="term-bar"><span class="term-title" style="margin-left:0;">Windows PowerShell</span></div>
         <div class="term-body">
-          <div><span class="tp">PS C:\Users\yourname&gt; </span><span style="color:#fff;">█</span></div>
+          <div><span class="tp">PS C:\Users\yourname&gt; </span><span style="color:#fff;">▌</span></div>
           <div style="color:#4b5563;font-size:12px;margin-top:4px;">↑ここに命令を入力する</div>
         </div>
       </div>
@@ -277,7 +373,7 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
             <div class="sn">3</div>
             <div class="sb">
               <h4>「ターミナル.app」をクリック</h4>
-              <p>一覧の一番上に出てくるものをクリックする</p>
+              <p>一覧の一番上に出てくるのをクリックする</p>
             </div>
           </div>
         </div>
@@ -286,20 +382,16 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
         </div>
       </div>
       <div>
-        <div class="img-box dark-bg">
-          <img src="https://help.apple.com/assets/694058E34AF4DEFE100B21F0/694058E5E47399E70903F18D/en_US/fe66109d1c446abfb01861b47ef61791.png" alt="Mac Spotlight" loading="lazy" onerror="this.parentElement.style.display='none'">
-        </div>
-        <p class="img-cap">Spotlight検索の画面（出典：Apple）</p>
         <div class="check-box" style="margin-top:8px;">
-          <div class="check-title">✅ こうなればOK！</div>
+          <div class="check-title">✅ こうなれば OK！</div>
           <div class="term">
             <div class="term-bar"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div><span class="term-title">ターミナル</span></div>
             <div class="term-body">
               <div><span class="to">Last login: Thu Apr 17...</span></div>
-              <div><span class="tp">yourname@MacBook ~ </span><span class="tc">%</span> <span style="color:#fff;">█</span></div>
+              <div><span class="tp">yourname@MacBook ~ </span><span class="tc">%</span> <span style="color:#fff;">▌</span></div>
             </div>
           </div>
-          <p style="font-size:13px;margin-top:6px;color:#6ee7b7;">「%」の後ろにカーソルが点滅したら成功！</p>
+          <p style="font-size:13px;margin-top:6px;color:#6ee7b7;">「%」の後ろにカーソルが点滅していれば成功！</p>
         </div>
       </div>
     </div>
@@ -320,14 +412,14 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
             <div class="sn b">2</div>
             <div class="sb">
               <h4>「powershell」と入力</h4>
-              <p>スタートメニューが開いたらそのまま「powershell」と入力する</p>
+              <p>スタートメニューが開いたら、そのまま「powershell」と入力する</p>
             </div>
           </div>
           <div class="step">
             <div class="sn b">3</div>
             <div class="sb">
               <h4>「Windows PowerShell」をクリック</h4>
-              <p>検索結果に出てきた「Windows PowerShell」をクリック</p>
+              <p>検索結果に出てくる「Windows PowerShell」をクリック</p>
             </div>
           </div>
         </div>
@@ -336,21 +428,17 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
         </div>
       </div>
       <div>
-        <div class="img-box">
-          <img src="https://learn.microsoft.com/en-us/windows/terminal/images/settings-default-shell.png" alt="Windows Terminal" loading="lazy" onerror="this.parentElement.style.display='none'">
-        </div>
-        <p class="img-cap">Windows Terminal の画面（出典：Microsoft）</p>
         <div class="check-box" style="margin-top:8px;">
-          <div class="check-title">✅ こうなればOK！</div>
+          <div class="check-title">✅ こうなれば OK！</div>
           <div class="term">
             <div class="term-bar"><span class="term-title" style="margin-left:0;">Windows PowerShell</span></div>
             <div class="term-body">
               <div><span class="to">Windows PowerShell</span></div>
               <div><span class="to">Copyright (C) Microsoft...</span></div>
-              <div style="margin-top:4px;"><span class="tp">PS C:\Users\yourname&gt; </span><span style="color:#fff;">█</span></div>
+              <div style="margin-top:4px;"><span class="tp">PS C:\Users\yourname&gt; </span><span style="color:#fff;">▌</span></div>
             </div>
           </div>
-          <p style="font-size:13px;margin-top:6px;color:#6ee7b7;">「PS C:\Users\...>」が出たら成功！</p>
+          <p style="font-size:13px;margin-top:6px;color:#6ee7b7;">「PS C:\Users\...>」が出れば成功！</p>
         </div>
       </div>
     </div>
@@ -362,7 +450,7 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
   <h2>📦 Node.jsのインストール</h2>
   <p style="margin-bottom:10px;">開発環境として入れておくと便利です。まずインストール済みか確認しましょう。</p>
   <div class="os-tabs" id="tab-n">
-    <div class="os-tab both active" onclick="sw('n','both')">🍎🪟 共通手順</div>
+    <div class="os-tab both active" onclick="sw('n','both')">🍎🪟 共通手順 </div>
   </div>
   <div id="n-both" class="os-content active">
     <div class="two">
@@ -374,7 +462,7 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
           <div class="term"><div class="term-body"><div><span class="tc">node --version</span></div><div><span class="to">v20.11.0  ← これが出たらOK！</span></div></div></div>
         </div>
         <div class="alert warn" style="margin-top:8px;">
-          ❌ <strong>エラーが出た場合 → 右の手順でインストール</strong>
+          ✖ <strong>エラーが出た場合 → 右の手順でインストール</strong>
         </div>
       </div>
       <div>
@@ -424,7 +512,7 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
 
 <!-- 6: Claude Codeのインストール -->
 <div class="slide s-install top">
-  <h2>🚀 Claude Codeのインストール</h2>
+  <h2>📥 Claude Codeのインストール</h2>
   <div class="alert purple" style="margin-bottom:12px;">✨ Node.jsとは別の専用インストーラーを使います。1コマンドで完了！</div>
   <div class="os-tabs" id="tab-i">
     <div class="os-tab mac active" onclick="sw('i','mac')">🍎 Mac</div>
@@ -439,7 +527,7 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
             <div class="sn">1</div>
             <div class="sb">
               <h4>コマンドをコピーする</h4>
-              <p>右のボタンを押すか、コマンドをすべて選択してコピー</p>
+              <p>右のボタンを押してコマンドをすべて選択してコピー</p>
             </div>
           </div>
           <div class="step">
@@ -469,7 +557,7 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
               <div><span class="to">Installing Claude Code...</span></div>
               <div><span class="to">✓ Downloaded</span></div>
               <div><span class="to">✓ Installed successfully</span></div>
-              <div style="margin-top:4px;"><span class="tp">% </span><span style="color:#fff;">█ ← ここに戻ってきたら完了</span></div>
+              <div style="margin-top:4px;"><span class="tp">% </span><span style="color:#fff;">▌ ← ここに戻ってきたら完了</span></div>
             </div>
           </div>
           <p style="font-size:13px;margin-top:6px;color:#6ee7b7;">「%」が戻ってきたらインストール完了！</p>
@@ -522,10 +610,10 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
               <div><span class="tc">&gt; irm https://claude.ai/install.ps1 | iex</span></div>
               <div><span class="to">Installing Claude Code...</span></div>
               <div><span class="to">✓ Installed successfully</span></div>
-              <div style="margin-top:4px;"><span class="tp">PS C:\...&gt; </span><span style="color:#fff;">█ ← 戻ってきたら完了</span></div>
+              <div style="margin-top:4px;"><span class="tp">PS C:\...&gt; </span><span style="color:#fff;">▌ ← 戻ってきたら完了</span></div>
             </div>
           </div>
-          <p style="font-size:13px;margin-top:6px;color:#6ee7b7;">「PS C:\...&gt;」が戻ってきたら完了！</p>
+          <p style="font-size:13px;margin-top:6px;color:#6ee7b7;">「PS C:\...>」が戻ってきたら完了！</p>
         </div>
         <p style="font-size:14px;margin-top:10px;margin-bottom:4px;"><strong>確認コマンド：</strong></p>
         <div class="code"><span class="cmd">claude --version</span>
@@ -542,17 +630,17 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
     🏢 <strong>会社のClaudeアカウントでログインします。APIキーは不要です。</strong>
   </div>
 
-  <!-- 招待リンクボックス -->
+  <!-- 事前リンクボックス -->
   <div style="background:#0f2a0f;border:2px solid #22c55e;border-radius:12px;padding:14px 18px;margin-bottom:14px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
     <div style="font-size:22px;">🔗</div>
-    <div style="flex:1;">
-      <div style="font-size:14px;font-weight:700;color:#86efac;margin-bottom:4px;">【事前準備】まず招待リンクからorganizationに参加してください</div>
+    <div style="flex:1;min-width:200px;">
+      <div style="font-size:14px;font-weight:700;color:#86efac;margin-bottom:4px;">【事前準備】まず最初に「organization」に参加してください</div>
       <a href="https://claude.ai/join/org/PyHXom_4AZrW-KAU32gXQQ"
          target="_blank"
          style="display:inline-block;background:#16a34a;color:#fff;font-size:13px;font-weight:700;padding:7px 18px;border-radius:8px;text-decoration:none;margin-top:4px;">
         ▶ 会社の組織に参加する（クリック）
       </a>
-      <div style="font-size:12px;color:#4ade80;margin-top:6px;">ブラウザでこのページが開きます → 会社メールでサインアップ or ログイン</div>
+      <div style="font-size:12px;color:#4ade80;margin-top:6px;">ブラウザでこのページを開きます → 会社メールでサインアップ or ログイン</div>
     </div>
   </div>
 
@@ -593,7 +681,7 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
           <div class="sn">5</div>
           <div class="sb">
             <h4>ターミナルに戻る</h4>
-            <p>認証完了 → ターミナルが自動で続きを始める</p>
+            <p>認証完了 → ターミナルが自動で続き始める</p>
           </div>
         </div>
       </div>
@@ -611,7 +699,7 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
             <div style="margin-top:6px;"><span style="color:#a78bfa;">&gt; </span><span class="tc">/login</span></div>
             <div class="to">Opening browser for authentication...</div>
             <div class="to">✓ Logged in as you@company.com</div>
-            <div style="margin-top:4px;"><span style="color:#a78bfa;">&gt; </span><span style="color:#fff;">█</span></div>
+            <div style="margin-top:4px;"><span style="color:#a78bfa;">&gt; </span><span style="color:#fff;">▌</span></div>
           </div>
         </div>
         <p style="font-size:13px;margin-top:6px;color:#6ee7b7;">メールアドレスが表示されたらログイン成功！</p>
@@ -626,9 +714,9 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
   </div>
 </div>
 
-<!-- 8: 毎回の始め方 -->
+<!-- 8: 毎日の始め方 -->
 <div class="slide s-start top">
-  <h2>▶️ 毎回の始め方（2ステップだけ！）</h2>
+  <h2>▶️ 毎日の始め方（2ステップだけ！）</h2>
   <div class="os-tabs" id="tab-s">
     <div class="os-tab mac active" onclick="sw('s','mac')">🍎 Mac</div>
     <div class="os-tab win" onclick="sw('s','win')">🪟 Windows</div>
@@ -678,7 +766,7 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
               <div class="to" style="margin-top:6px;">╔══════════════════════════╗</div>
               <div class="to">║   Claude Code  v1.x      ║</div>
               <div class="to">╚══════════════════════════╝</div>
-              <div style="margin-top:6px;"><span style="color:#a78bfa;">&gt; </span><span style="color:#fff;">█</span></div>
+              <div style="margin-top:6px;"><span style="color:#a78bfa;">&gt; </span><span style="color:#fff;">▌</span></div>
             </div>
           </div>
           <p style="font-size:13px;margin-top:6px;color:#6ee7b7;">「&gt;」が出たら話しかけられる状態！</p>
@@ -727,7 +815,7 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
               <div class="to" style="margin-top:6px;">╔══════════════════════════╗</div>
               <div class="to">║   Claude Code  v1.x      ║</div>
               <div class="to">╚══════════════════════════╝</div>
-              <div style="margin-top:6px;"><span style="color:#a78bfa;">&gt; </span><span style="color:#fff;">█</span></div>
+              <div style="margin-top:6px;"><span style="color:#a78bfa;">&gt; </span><span style="color:#fff;">▌</span></div>
             </div>
           </div>
           <p style="font-size:13px;margin-top:6px;color:#6ee7b7;">「&gt;」が出たら話しかけられる状態！</p>
@@ -742,7 +830,7 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
   <h2>💬 基本的な使い方</h2>
   <div class="two">
     <div>
-      <p style="margin-bottom:10px;"><span class="badge bb">共通</span> 「&gt;」の後ろに<span class="hl">日本語でそのまま</span>話しかけます。</p>
+      <p style="margin-bottom:10px;"><span class="badge bb">共通</span> 「&gt;」の後ろに<span class="hl">日本語でそのまま</span>話しかけられます。</p>
       <div class="card" style="margin-bottom:10px;">
         <h3>📝 こんなことを頼めます</h3>
         <div class="term" style="margin-top:8px;">
@@ -766,10 +854,6 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
       </div>
     </div>
     <div>
-      <div class="img-box dark-bg" style="margin-bottom:8px;">
-        <img src="https://github.com/anthropics/claude-code/raw/main/demo.gif" alt="Claude Code デモ" style="max-height:200px;" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'padding:30px;text-align:center;color:#6b7280;font-size:13px;\'>デモ GIF を読み込み中...</div>'">
-      </div>
-      <p class="img-cap">Claude Code の実際の動作（出典：Anthropic GitHub）</p>
       <div class="card" style="margin-top:8px;">
         <h3>/ コマンド（特別な命令）</h3>
         <div class="code" style="margin-top:6px;font-size:13px;"><span class="cmd">/help</span>   <span class="cm"># 使い方を確認する</span>
@@ -781,24 +865,24 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
   </div>
 </div>
 
-<!-- 10: 毎回の終わり方 -->
+<!-- 10: 毎日の終わり方 -->
 <div class="slide s-end">
-  <h2>⏹️ 毎回の終わり方</h2>
+  <h2>⏹️ 毎日の終わり方</h2>
   <p style="margin-bottom:16px;"><span class="badge bb">Mac / Windows 共通</span></p>
   <div class="cards col2">
     <div class="card">
-      <h3>方法①　コマンドで終了（推奨）</h3>
+      <h3>方法① コマンドで終了（推奨）</h3>
       <div class="code" style="margin-top:8px;"><span class="cmd">/quit</span></div>
       <div class="term" style="margin-top:8px;">
         <div class="term-body" style="font-size:13px;">
           <div><span style="color:#a78bfa;">&gt; </span><span class="tc">/quit</span></div>
           <div class="to" style="margin-top:4px;">Goodbye! 👋</div>
-          <div style="margin-top:4px;"><span class="tp">% </span><span style="color:#4b5563;">← 元の画面に戻ったら終了完了</span></div>
+          <div style="margin-top:4px;"><span class="tp">% </span><span style="color:#4b5563;">← 前の画面に戻ったら終了完了</span></div>
         </div>
       </div>
     </div>
     <div class="card">
-      <h3>方法②　キーボードで終了</h3>
+      <h3>方法② キーボードで終了</h3>
       <p style="margin-top:10px;font-size:15px;">
         <kbd>Ctrl</kbd> + <kbd>C</kbd> を <strong>2回</strong> 押す
       </p>
@@ -806,7 +890,7 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
     </div>
   </div>
   <div class="check-box" style="margin-top:16px;">
-    <div class="check-title">✅ 完全終了の流れ</div>
+    <div class="check-title">✅ 安全終了の流れ</div>
     <p style="font-size:14px;color:#6ee7b7;margin-top:6px;">
       <code style="background:#052e16;padding:2px 8px;border-radius:4px;">/quit</code>
       でClaude Code終了 →
@@ -818,7 +902,7 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
 
 <!-- 11: コマンド一覧 -->
 <div class="slide s-ref top">
-  <h2>📌 コマンド一覧</h2>
+  <h2>📖 コマンド一覧</h2>
   <div class="os-tabs" id="tab-r">
     <div class="os-tab mac active" onclick="sw('r','mac')">🍎 Mac</div>
     <div class="os-tab win" onclick="sw('r','win')">🪟 Windows</div>
@@ -829,7 +913,7 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
         <p style="font-size:13px;color:#6b7280;margin-bottom:4px;">【最初の1回だけ】</p>
         <div class="code" style="font-size:13px;"><span class="cmd">curl -fsSL https://claude.ai/install.sh | bash</span><span class="cm"> # インストール</span>
 <span class="cmd">claude</span>  <span class="cm">→ 起動 →</span> <span class="cmd">/login</span>  <span class="cm"># ログイン</span></div>
-        <p style="font-size:13px;color:#6b7280;margin-bottom:4px;margin-top:10px;">【毎回の作業開始】</p>
+        <p style="font-size:13px;color:#6b7280;margin-bottom:4px;margin-top:10px;">【毎日の作業開始】</p>
         <div class="code" style="font-size:13px;"><span class="cmd">cd ~/Desktop</span>  <span class="cm"># フォルダに移動</span>
 <span class="cmd">claude</span>        <span class="cm"># 起動</span></div>
         <p style="font-size:13px;color:#6b7280;margin-bottom:4px;margin-top:10px;">【Claude Code内で使うコマンド】</p>
@@ -857,7 +941,7 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
         <p style="font-size:13px;color:#6b7280;margin-bottom:4px;">【最初の1回だけ】</p>
         <div class="code" style="font-size:13px;"><span class="cmd">irm https://claude.ai/install.ps1 | iex</span><span class="cm"> # インストール</span>
 <span class="cmd">claude</span>  <span class="cm">→ 起動 →</span> <span class="cmd">/login</span>  <span class="cm"># ログイン</span></div>
-        <p style="font-size:13px;color:#6b7280;margin-bottom:4px;margin-top:10px;">【毎回の作業開始】</p>
+        <p style="font-size:13px;color:#6b7280;margin-bottom:4px;margin-top:10px;">【毎日の作業開始】</p>
         <div class="code" style="font-size:13px;"><span class="cmd">cd $HOME\Desktop</span>  <span class="cm"># フォルダに移動</span>
 <span class="cmd">claude</span>            <span class="cm"># 起動</span></div>
         <p style="font-size:13px;color:#6b7280;margin-bottom:4px;margin-top:10px;">【Claude Code内で使うコマンド】</p>
@@ -886,33 +970,33 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
   <h2>🛠️ こんなときどうする？</h2>
   <div style="display:flex;flex-direction:column;gap:10px;">
     <div class="card">
-      <h3><span class="red">❌</span> 「command not found: claude」と出る</h3>
+      <h3><span class="red">✖</span> 「command not found: claude」と出る</h3>
       <p style="font-size:14px;margin-bottom:6px;">Claude Code がインストールされていません。スライド6のインストールコマンドを実行してください。</p>
     </div>
     <div class="card">
-      <h3><span class="red">❌</span> 「claude」と入力しても反応しない / 固まった</h3>
+      <h3><span class="red">✖</span> 「claude」と入力しても反応しない / 固まった</h3>
       <p style="font-size:14px;"><kbd>Ctrl</kbd>+<kbd>C</kbd> を押してキャンセル → ターミナルを閉じて開き直す → 再度 <code style="background:#1e1e2e;padding:1px 5px;border-radius:3px;">claude</code> と入力</p>
     </div>
     <div class="card">
-      <h3><span class="red">❌</span> ログインできない（ブラウザが開かない）</h3>
+      <h3><span class="red">✖</span> ログインできない（ブラウザが開かない）</h3>
       <p style="font-size:14px;">ターミナルに表示される <strong>URLをコピー</strong> してブラウザのアドレスバーに貼り付ける</p>
     </div>
     <div class="card">
-      <h3><span class="red">❌</span> Windows「UnauthorizedAccess」と出る</h3>
+      <h3><span class="red">✖</span> Windowsで「UnauthorizedAccess」と出る</h3>
       <div class="code" style="font-size:13px;margin-top:6px;"><span class="cmd">Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser</span></div>
       <p style="font-size:13px;margin-top:4px;"><code style="background:#1e1e2e;padding:1px 6px;border-radius:3px;">Y</code> を入力 → Enter → もう一度インストールを試す</p>
     </div>
     <div class="card">
-      <h3><span class="red">❌</span> Mac「Permission denied」と出る</h3>
+      <h3><span class="red">✖</span> Macで「Permission denied」と出る</h3>
       <div class="code" style="font-size:13px;margin-top:6px;"><span class="cmd">sudo curl -fsSL https://claude.ai/install.sh | bash</span></div>
-      <p style="font-size:13px;margin-top:4px;">パスワードを求められたら Mac のログインパスワードを入力（画面には表示されないが入力されている）</p>
+      <p style="font-size:13px;margin-top:4px;">パスワードを求められる。Mac のログインパスワードを入力（画面には表示されないが入力されている）</p>
     </div>
   </div>
 </div>
 
 <!-- 13: クイックリファレンス -->
 <div class="slide s-ref top">
-  <h2>📋 まとめ・クイックリファレンス</h2>
+  <h2>📌 まとめ・クイックリファレンス</h2>
   <div class="cards col2" style="margin-bottom:12px;">
     <div class="card" style="border-color:#a78bfa;">
       <h3 style="color:#c4b5fd;">🍎 Macユーザー</h3>
@@ -920,7 +1004,7 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
         <tr><td style="font-size:12px;color:#6b7280;">ターミナルを開く</td><td style="font-size:12px;"><kbd>⌘</kbd>+<kbd>スペース</kbd>→「ターミナル」</td></tr>
         <tr><td style="font-size:12px;color:#6b7280;">インストール（初回）</td><td style="font-size:12px;"><code>curl -fsSL https://claude.ai/install.sh | bash</code></td></tr>
         <tr><td style="font-size:12px;color:#6b7280;">ログイン（初回）</td><td style="font-size:12px;"><code>claude</code> → <code>/login</code></td></tr>
-        <tr><td style="font-size:12px;color:#6b7280;">毎回の起動</td><td style="font-size:12px;"><code>cd ~/Desktop</code> → <code>claude</code></td></tr>
+        <tr><td style="font-size:12px;color:#6b7280;">毎日の起動</td><td style="font-size:12px;"><code>cd ~/Desktop</code> → <code>claude</code></td></tr>
         <tr><td style="font-size:12px;color:#6b7280;">終了</td><td style="font-size:12px;"><code>/quit</code></td></tr>
         <tr><td style="font-size:12px;color:#6b7280;">貼り付け</td><td style="font-size:12px;"><kbd>⌘</kbd>+<kbd>V</kbd></td></tr>
       </table>
@@ -931,7 +1015,7 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
         <tr><td style="font-size:12px;color:#6b7280;">PowerShellを開く</td><td style="font-size:12px;"><kbd>⊞</kbd>→「powershell」→Enter</td></tr>
         <tr><td style="font-size:12px;color:#6b7280;">インストール（初回）</td><td style="font-size:12px;"><code>irm https://claude.ai/install.ps1 | iex</code></td></tr>
         <tr><td style="font-size:12px;color:#6b7280;">ログイン（初回）</td><td style="font-size:12px;"><code>claude</code> → <code>/login</code></td></tr>
-        <tr><td style="font-size:12px;color:#6b7280;">毎回の起動</td><td style="font-size:12px;"><code>cd $HOME\Desktop</code> → <code>claude</code></td></tr>
+        <tr><td style="font-size:12px;color:#6b7280;">毎日の起動</td><td style="font-size:12px;"><code>cd $HOME\Desktop</code> → <code>claude</code></td></tr>
         <tr><td style="font-size:12px;color:#6b7280;">終了</td><td style="font-size:12px;"><code>/quit</code></td></tr>
         <tr><td style="font-size:12px;color:#6b7280;">貼り付け</td><td style="font-size:12px;">右クリック→貼り付け</td></tr>
       </table>
@@ -939,10 +1023,10 @@ kbd { background:#2d2d3e; border:1px solid #555; border-radius:4px; padding:2px 
   </div>
   <div class="check-box">
     <div class="check-title">🎉 これで環境構築から使い方まで完了！</div>
-    <p style="font-size:14px;color:#6ee7b7;margin-top:6px;">わからないことが出たら Claude Code に<strong>日本語でそのまま聞いてみましょう。</strong></p>
+    <p style="font-size:14px;color:#6ee7b7;margin-top:6px;">わからないことが出たら、Claude Code に<strong>日本語でそのまま聞いてみましょう</strong></p>
     <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;">
-      <div style="font-size:13px;color:#94a3b8;">📖 公式ドキュメント：<span style="color:#60a5fa;">code.claude.com/docs</span></div>
-      <div style="font-size:13px;color:#94a3b8;">🔑 コンソール：<span style="color:#60a5fa;">console.anthropic.com</span></div>
+      <div style="font-size:13px;color:#94a3b8;">📄 公式ドキュメント：<span style="color:#60a5fa;">code.claude.com/docs</span></div>
+      <div style="font-size:13px;color:#94a3b8;">🖥 コンソール：<span style="color:#60a5fa;">console.anthropic.com</span></div>
     </div>
   </div>
 </div>
@@ -977,6 +1061,23 @@ document.addEventListener('keydown', e => {
   if (e.key==='ArrowRight'||e.key==='ArrowDown') go(1);
   if (e.key==='ArrowLeft' ||e.key==='ArrowUp')   go(-1);
 });
+
+// スワイプ対応
+let touchStartX = 0;
+let touchStartY = 0;
+document.addEventListener('touchstart', e => {
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+}, { passive: true });
+document.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  const dy = e.changedTouches[0].clientY - touchStartY;
+  if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+    if (dx < 0) go(1);
+    else go(-1);
+  }
+}, { passive: true });
+
 function sw(g, os) {
   document.querySelectorAll('#tab-'+g+' .os-tab').forEach(t=>t.classList.remove('active'));
   const at = document.querySelector('#tab-'+g+' .os-tab.'+os);
